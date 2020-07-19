@@ -102,6 +102,8 @@ class ArticleController extends AbstractController
                     
                     $entity->flush();
 
+                    $this->addFlash('success', 'Your changes were saved!');
+
                     return $this->redirectToRoute('article_list');
                 }
 

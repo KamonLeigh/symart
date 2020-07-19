@@ -8,6 +8,14 @@
     </head>
     <body>
         {{ include('inc/navbar.html.twig')}}
+        
+        {% for label, messages in app.flashes(['success', 'warning']) %}
+            {% for message in messages %}
+                <div class="alert alert-{{label}}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
 
         <div class="container">
              {% block body %}{% endblock %}
